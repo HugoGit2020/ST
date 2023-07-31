@@ -1,0 +1,70 @@
+<form (submit)="guardarCambios()" [formGroup]="form">
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Tienda</mat-label>
+      <mat-select formControlName="fkTienda" class="form-group">
+        <mat-option *ngFor="let tienda of tiendas" [value]="tienda.idTienda">{{tienda.sucursal}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Artículo</mat-label>
+      <input formControlName="articulo1" matInput class="form-group" />
+      <mat-error *ngIf="form.invalid" class="text-danger"><small style="padding-left:40px; margin-top:40px;">{{obtenerErrorCampoArticulo()}}</small></mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Código</mat-label>
+      <input formControlName="codigo" matInput class="form-group" />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Descripción</mat-label>
+      <input formControlName="descripcion" matInput class="form-group" />
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Precio</mat-label>
+      <input formControlName="precio" matInput class="form-group" />
+    </mat-form-field>
+  </div>
+
+  <!--<div>
+    <mat-form-field appearance="outline">
+      <mat-label>Imagen</mat-label>
+      <input formControlName="imagen" matInput class="form-group" />
+    </mat-form-field>
+  </div>-->
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Stock</mat-label>
+      <input formControlName="stock" matInput class="form-group" />
+    </mat-form-field>
+  </div>
+
+  <div style="display:none;">
+    <mat-form-field appearance="outline">
+      <mat-label>idArticulo</mat-label>
+      <input formControlName="idArticulo" matInput class="form-group" />
+    </mat-form-field>
+  </div>
+
+  <app-input-img (archivoSeleccionado)="archivoSeleccionado($event)"></app-input-img>
+
+
+  <div>
+    <button mat-flat-button color="primary" [disabled]="form.invalid">
+      Guardar Cambios
+    </button>
+    <a mat-stroked-button routerLink="/articulo">
+      Cancelar
+    </a>
+  </div>
+
+</form>

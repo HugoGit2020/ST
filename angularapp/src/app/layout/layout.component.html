@@ -1,0 +1,119 @@
+<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" data-widget="pushmenu" role="button"><i class="fas fa-bars"></i></a>
+    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+      <a routerLink="/tienda" class="nav-link">Solo Talento, Hugo Hernandez Alvarado, hugo.hdz.a@gmail.com, 55 47 96 71 01</a>
+    </li>
+  </ul>
+
+  <!-- Right navbar links -->
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+
+      <app-autorizado>
+        <ng-container autorizado>
+          <a mat-button (click)="salirTiendas()">Salir</a>
+        </ng-container>
+        <ng-container noAutorizado>
+          <a mat-button routerLink="">Login</a>
+        </ng-container>
+      </app-autorizado>
+
+
+    </li>
+  </ul>
+</nav>
+
+<!--MENU IZQUIERDO H2A 06/07/2023-->
+<aside class="main-sidebar sidebar-dark-primary primary elevation-4" style="background-color:#1B274C">
+  <h2 class="text-white nav-link">Solo Talento</h2>
+
+  <div class="sidebar">
+    <div class="form-inline">
+      <div class="input-group" data-widget="sidebar-search">
+        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-sidebar">
+            <i class="fas fa-search fa-fw"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sidebar Menu -->
+    <nav class="mt-2">
+      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+        <li class="nav-item">
+          <a routerLink="/tienda" class="nav-link">
+            <i class="fa fa-building" aria-hidden="true"></i>
+            <p>
+              &nbsp;Tiendas
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview" style="display:block; padding-left:20px;">
+            <li class="nav-item">
+              <a routerLink="/tienda" class="nav-link">
+                <p>Ver Tiendas</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/tiendas/crear" class="nav-link">
+                <p>Crear Tienda</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link">
+            <i class="fa fa-barcode" aria-hidden="true"></i>
+            <p>
+              &nbsp;Artículos
+              <span class="badge badge-info right">2</span>
+            </p>
+          </a>
+          <ul class="nav nav-treeview" style="display:block; padding-left:20px;">
+            <li class="nav-item">
+              <a routerLink="/articulo" class="nav-link">
+                <p>Ver Artículos</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/articulos/crear" class="nav-link">
+                <p>Crear Artículos</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link">
+            <i class="fa fa-user-circle" aria-hidden="true"></i>
+            <p>&nbsp;Clientes compras</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link">
+            <i class="fa fa-handshake" aria-hidden="true"></i>
+            <p>&nbsp;Productos</p>
+          </a>
+          <ul class="nav nav-treeview" style="display:block; padding-left:20px;">
+            <li class="nav-item">
+              <a routerLink="/producto" class="nav-link">
+                <p>Comprar</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+    </nav>
+  </div>
+</aside>
+
+
+  

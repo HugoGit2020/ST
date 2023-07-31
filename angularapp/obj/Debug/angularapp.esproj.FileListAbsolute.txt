@@ -1,0 +1,2 @@
+E:\Datos\Curriculum\Empleos\Solo_Talento\Net_Angular\ST1\angularapp\obj\Debug\angularapp.esproj.SuggestedBindingRedirects.cache
+E:\Datos\Curriculum\Empleos\Solo_Talento\Net_Angular\ST1\angularapp\obj\Debug\angularapp.esproj.CoreCompileInputs.cache

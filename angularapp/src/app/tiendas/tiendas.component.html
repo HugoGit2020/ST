@@ -1,0 +1,87 @@
+<div class="wrapper">
+  <app-layout></app-layout>
+
+  <div class="content-wrapper">
+    <!--<app-autorizado [rol]="'admin'">
+    <ng-container autorizado>
+      Estas autenticado
+    </ng-container>
+    <ng-container noAutorizado>
+      No esta Autenticado
+    </ng-container>
+  </app-autorizado>-->
+
+    <p>&nbsp;</p>
+    <h1>Tiendas Lista</h1>
+
+    <ng-container contenido>
+      <table mat-table #table [dataSource]="tienda" class="mat-elevation-z8">
+        <!--<table mat-table #table class="mat-elevation-z8">-->
+        <ng-container matColumnDef="idTienda">
+          <th mat-header-cell *matHeaderCellDef>Id</th>
+          <td mat-cell *matCellDef="let element">{{ element.idTienda }}</td>
+        </ng-container>
+        <ng-container matColumnDef="sucursal">
+          <th mat-header-cell *matHeaderCellDef>Sucursal</th>
+          <td mat-cell *matCellDef="let element">{{ element.sucursal }}</td>
+        </ng-container>
+        <ng-container matColumnDef="calle">
+          <th mat-header-cell *matHeaderCellDef>Calle</th>
+          <td mat-cell *matCellDef="let element">{{ element.calle }}</td>
+        </ng-container>
+        <ng-container matColumnDef="cp">
+          <th mat-header-cell *matHeaderCellDef>cp</th>
+          <td mat-cell *matCellDef="let element">{{ element.cp }}</td>
+        </ng-container>
+        <ng-container matColumnDef="colonia">
+          <th mat-header-cell *matHeaderCellDef>Colonia</th>
+          <td mat-cell *matCellDef="let element">{{ element.colonia }}</td>
+        </ng-container>
+        <ng-container matColumnDef="ciudad">
+          <th mat-header-cell *matHeaderCellDef>Ciudad</th>
+          <td mat-cell *matCellDef="let element">{{ element.ciudad }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef>Acciones</th>
+          <td mat-cell *matCellDef="let element">
+            <a routerLink="/tiendas/editar/{{element.idTienda}}" mat-flat-button color="primary">Editar</a>
+            <button mat-flat-button color="warn" (click)="borrar(element.idTienda)">Borrar</button>
+          </td>
+        </ng-container>
+
+        <!--<ng-container matColumnDef="acciones ">
+        <th mat-header-cell *matHeaderCellDef>acciones</th>
+        <td mat-cell *matCellDef="let element">
+          <a routerLink="/tiendas/editar/{{ element.idTienda }}"
+             mat-flat-button
+             color="primary">Editar</a>
+          <button mat-flat-button (confirm)="borrar(element.idTienda)">
+               color="warn"
+                        [swal]="{title: 'Confirmación',
+              text: '¿Está seguro que desea borrar el registro?',
+              showCancelButton: true}"
+
+                  Borrar
+                </button>
+                    </td>
+      </ng-container>-->
+
+        <tr mat-header-row *matHeaderRowDef="columnasAMostrar"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnasAMostrar"></tr>
+      </table>
+
+      <!--<mat-paginator [pageSizeOptions]="[5, 10, 20, 50]" showFirstLastButtons
+                   [length]="cantidadTotalRegistros" [pageSize]="cantidadRegistrosAMostrar"
+                   class="mat-elevation-z8"
+                   (page)="actualizarPaginacion($event)">
+    </mat-paginator>-->
+
+    </ng-container>
+
+  </div>
+
+  <app-footer></app-footer>
+  
+</div>
+
